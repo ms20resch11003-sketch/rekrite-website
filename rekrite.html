@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekrite Herbaceuticals | Nature-Inspired Materials</title>
+    <!-- Google Fonts for a clean, professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS Variables for Elegant Feminine Biotech Theme --- */
+        :root {
+            --primary: #C17782;
+            /* Elegant Dusty Rose */
+            --primary-light: #D996A0;
+            /* Soft Rose */
+            --secondary: #362C2E;
+            /* Warm Charcoal (replaces harsh black/blue) */
+            --bg-light: #FCF9F9;
+            /* Soft Pearl / Warm White */
+            --white: #FFFFFF;
+            --text-main: #54484A;
+            /* Warm dark grey for high readability */
+            --text-muted: #938688;
+            --border-color: #EADEE0;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            /* Smoother, softer animations */
+        }
+
+        /* --- Global Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.7;
+            /* Slightly looser line height for elegance */
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--secondary);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 6rem 5% 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* Soft feminine gradient */
+            background: linear-gradient(135deg, #FFF0F2 0%, #F4E4E6 100%);
+            padding-top: 8rem;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            color: var(--secondary);
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            color: var(--text-main);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.9rem 2.2rem;
+            border-radius: 40px;
+            /* Softer, rounder buttons */
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(193, 119, 130, 0.3);
+            /* Rose-tinted glow */
+        }
+
+        /* --- About Section (The Story) --- */
+        #about {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 4rem;
+            margin-top: -3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+        }
+
+        .story-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--primary);
+            border-left: 4px solid var(--primary-light);
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Products Section --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(193, 119, 130, 0.1);
+            border-color: var(--primary-light);
+        }
+
+        .dummy-image {
+            width: 100%;
+            height: 200px;
+            background-color: #F8EDEF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .product-content {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+
+        .product-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .product-content h4 {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .features-list li {
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .features-list li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* --- Co-Creation Section --- */
+        #co-creation {
+            background: var(--secondary);
+            color: var(--white);
+            margin-top: 4rem;
+            padding: 6rem 5%;
+            border-radius: 0;
+        }
+
+        #co-creation .section-title {
+            color: var(--white);
+        }
+
+        .co-creation-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .benefit-card h4 {
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Re-AI Assistant Widget --- */
+        #re-ai-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 350px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 9999;
+            transform: translateY(calc(100% - 60px));
+            /* Fixed broken syntax here */
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #re-ai-widget.open {
+            transform: translateY(0);
+        }
+
+        .re-ai-header {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .re-ai-header h4 {
+            margin: 0;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+        }
+
+        .re-ai-header .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #E29CA7;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px rgba(226, 156, 167, 0.8);
+        }
+
+        .re-ai-body {
+            height: 320px;
+            padding: 1.5rem;
+            overflow-y: auto;
+            background: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: 0.9rem 1.2rem;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .ai-message {
+            background: var(--white);
+            color: var(--secondary) !important;
+            /* Forces AI text to be readable dark charcoal */
+            border: 1px solid var(--border-color);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .user-message {
+            background: var(--primary);
+            color: var(--white) !important;
+            /* Forces User text to be bright white */
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .re-ai-input {
+            display: flex;
+            border-top: 1px solid var(--border-color);
+            background: var(--white);
+            padding: 0.8rem;
+        }
+
+        .re-ai-input input {
+            flex-grow: 1;
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--secondary);
+            /* Makes typing text visible */
+            background: transparent;
+        }
+
+        .re-ai-input input::placeholder {
+            color: var(--text-muted);
+            /* Makes the "Type your message..." placeholder visible */
+        }
+
+        .re-ai-input button {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* --- Re-AI Workspace Styles --- */
+        .re-ai-workspace {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem auto;
+            max-width: 800px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            color: var(--text-main);
+            text-align: left;
+        }
+
+        .workspace-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .workspace-header h3 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .input-group select,
+        .input-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--bg-light);
+        }
+
+        .input-group select:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(193, 119, 130, 0.15);
+        }
+
+        .workspace-btn {
+            width: 100%;
+            display: block;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .workspace-results {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px dashed var(--border-color);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .workspace-results.hidden {
+            display: none;
+        }
+
+        .result-card {
+            background: #FFF6F7;
+            border: 1px solid var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .result-card h4 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .result-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Investment Section Styles --- */
+        #investment {
+            background: var(--white);
+            padding: 6rem 5%;
+        }
+
+        .investment-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Fixed contrast for Investment headings */
+        #investment .section-title {
+            color: var(--secondary);
+            font-size: 2.8rem;
+        }
+
+        .investment-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: var(--text-main);
+        }
+
+        .readiness-banner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            /* Changed from secondary to a soft rose tint to fit the brand */
+            background: linear-gradient(135deg, #F4E4E6 0%, #EADEE0 100%);
+            color: var(--secondary);
+            padding: 3.5rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .readiness-item h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .readiness-item p {
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .readiness-banner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .subsection-title {
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 2.5rem;
+            font-size: 1.8rem;
+        }
+
+        .investment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .invest-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            border-top: 4px solid var(--primary-light);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .invest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(193, 119, 130, 0.08);
+        }
+
+        .invest-card h4 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .invest-card p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .pitch-cta {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .pitch-cta p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        /* --- Microencapsulation Highlight Section --- */
+        .highlight-section {
+            /* Warm charcoal gradient replacing the harsh blue */
+            background: linear-gradient(135deg, #4A3C3F 0%, #2A2123 100%);
+            color: var(--white);
+            padding: 6rem 5%;
+            margin: 2rem 0;
+            border-top: 4px solid var(--primary);
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .highlight-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .highlight-header h2 {
+            color: var(--primary-light);
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-subtitle {
+            color: #D7C9CB;
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .highlight-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .highlight-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .highlight-content p {
+            font-size: 1.15rem;
+            color: #F8F4F5;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .highlight-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .highlight-features li {
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1.05rem;
+            color: #F8F4F5;
+        }
+
+        .highlight-features li::before {
+            content: "✓";
+            color: var(--primary-light);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .highlight-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.9rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-btn:hover {
+            background: var(--primary-light);
+            color: var(--white);
+        }
+
+        .highlight-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .highlight-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        @media (max-width: 900px) {
+            .highlight-container {
+                flex-direction: column;
+            }
+
+            .highlight-image {
+                width: 100%;
+            }
+        }
+
+        /* --- Comprehensive Footer Styles --- */
+        #footer {
+            background: var(--secondary);
+            color: #D7C9CB;
+            padding: 5rem 5% 2rem;
+            border-top: 5px solid var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .brand-col p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .contact-col p {
+            margin-bottom: 0.4rem;
+            line-height: 1.5;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #D7C9CB;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-light);
+            transform: translateX(3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85rem;
+            color: #A59497;
+        }
+
+        .footer-bottom a {
+            color: #A59497;
+            text-decoration: underline;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 900px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* --- Hero Text Slideshow Styles --- */
+        .hero-intro {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+
+        .hero-slideshow {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            height: 120px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-slideshow .slide {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            margin: 0;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            font-size: 1.15rem;
+            color: var(--text-main);
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .hero-slideshow .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .hero-cta-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero-slideshow {
+                height: 220px;
+            }
+
+            .hero-slideshow .slide {
+                font-size: 1.05rem;
+            }
+        }
+
+        /* --- Read More Button & Modal Styles --- */
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .read-more-btn:hover {
+            color: var(--primary-light);
+            gap: 10px;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(54, 44, 46, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 90%;
+            max-width: 750px;
+            max-height: 85vh;
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            line-height: 1;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--secondary);
+        }
+
+        #modal-body {
+            color: var(--text-main);
+        }
+
+        #modal-body h3 {
+            color: var(--secondary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        #modal-body h4 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        #modal-body p {
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        #modal-body ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #modal-body ul li {
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        #modal-body strong {
+            color: var(--secondary);
+        }
+
+        /* --- Product Card Media Carousel Styles --- */
+        .product-media-carousel {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+            background: #F8EDEF;
+        }
+
+        .carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            pointer-events: none;
+        }
+
+        .carousel-item.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .carousel-item video,
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(54, 44, 46, 0.4);
+            color: var(--white);
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .carousel-arrow:hover {
+            background: var(--primary);
+        }
+
+        .prev-arrow {
+            left: 10px;
+        }
+
+        .next-arrow {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="logo">Rekrite</div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#co-creation">Co-creating</a></li>
+                <li><a href="#investment">Invest</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Co-Creating Nature-Inspired Solutions for a Better Tomorrow</h1>
+
+        <p class="hero-intro">At Rekrite, we believe the next breakthrough in materials innovation begins with
+            collaboration.</p>
+
+        <!-- Text Slideshow Container -->
+        <div class="hero-slideshow">
+            <p class="slide active">With over 15 years of expertise in biopolymer-based materials, including bacterial
+                cellulose, we develop versatile material formats such as microcapsules, sheets, beads, foams, and
+                gels—designed to address real-world challenges through smarter, more sustainable solutions.</p>
+
+            <p class="slide">We partner with innovators, industries, and researchers to co-create nature-inspired
+                solutions across healthcare, personal care, home care, agriculture, electronics, and beyond.</p>
+
+            <p class="slide">Whether the challenge is to improve the efficiency of active-ingredient delivery, develop
+                high-performance natural carriers, reduce dependence on conventional plastics, or enable entirely new
+                applications, we bring together materials expertise, purposeful design, and collaborative thinking to
+                turn possibilities into solutions.</p>
+        </div>
+
+        <p class="hero-cta-text">Have a challenge worth solving?</p>
+        <a href="#co-creation" class="btn">Let's co-create what comes next</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">The Rekrite Journey</h2>
+        <div class="story-container">
+            <div class="quote">"Sometimes destinations become a journey. This is exactly what Rekrite is. What started
+                as mere research became an obsession which found a purpose."</div>
+            <p>Founded by Prof. Mudrika Khandelwal from IIT Hyderabad, Rekrite Herbaceuticals Private Limited is on a
+                trajectory to disrupt applications with better functions and sustainability. Many incidents shaped it
+                along the way.</p>
+            <p>Currently, our journey is laid out to position a wonderful supramolecular hierarchical fiber produced by
+                natural bacterial fermentation—cellulose. We believe that caring for ingredients is paramount;
+                protection until they are required becomes essential. We bring our expertise and IP here to work with
+                experts across various fields, providing solutions that may not just change the world, but recreate it.
+            </p>
+            <p>We partner with innovators, industries, and researchers to co-create nature-inspired solutions across
+                healthcare, personal care, home care, agriculture, electronics, and beyond.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2 class="section-title">Material Platforms</h2>
+        <div class="products-grid">
+
+            <!-- Product 1 -->
+            <!-- Product 1 -->
+            <div class="product-card">
+                <!-- NEW Media Carousel (Video + Images) -->
+                <div class="product-media-carousel">
+                    <!-- Item 1: Auto-playing Video -->
+                    <div class="carousel-item active">
+                        <!-- 'muted' and 'playsinline' are required for browsers to allow autoplay -->
+                        <video src="images/bc1.mp4" autoplay muted playsinline></video>
+                    </div>
+                    <!-- Item 2: Image -->
+                    <div class="carousel-item">
+                        <img src="images/bc2.jpeg" alt="Porous Beads View 1">
+                    </div>
+                    <!-- Item 3: Image -->
+                    <div class="carousel-item">
+                        <img src="images/bc3.jpg" alt="Porous Beads View 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/bc4.JPG" alt="Porous Beads View 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/bc5.JPG" alt="Porous Beads View 2">
+                    </div>
+
+                    <!-- Navigation Arrows -->
+                    <button class="carousel-arrow prev-arrow" onclick="moveCarousel(this, -1)">&#10094;</button>
+                    <button class="carousel-arrow next-arrow" onclick="moveCarousel(this, 1)">&#10095;</button>
+                </div>
+                <!-- END Media Carousel -->
+                <div class="product-content">
+                    <h3>Bacterial Cellulose Hydrogel</h3>
+                    <h4>High-purity, water-rich nanofibrous material</h4>
+                    <p>Engineered for versatile applications across healthcare, advanced materials, and sustainable
+                        product development. Composed entirely of cellulose with a water content exceeding 95%.</p>
+                    <ul class="features-list">
+                        <li><strong>High Water Content:</strong> >95% water, hydrogel-like structure.</li>
+                        <li><strong>Nanofibrous Architecture:</strong> Fibres ranging 20–60 nm in diameter.</li>
+                        <li><strong>Mechanical Flexibility:</strong> Withstands tensile strains up to 30%.</li>
+                        <li><strong>Thermal Stability:</strong> Stable at temperatures up to 200°C.</li>
+                    </ul>
+
+                    <!-- Read More Button -->
+                    <button class="read-more-btn" onclick="openModal('hydrogel-details')">Read More
+                        <span>→</span></button>
+
+                    <!-- Hidden Full Details for the Popup -->
+                    <div id="hydrogel-details" style="display: none;">
+                        <h3>Bacterial Cellulose Hydrogel</h3>
+                        <p>Bacterial Cellulose Hydrogel is a high-purity, water-rich nanofibrous material engineered
+                            for
+                            versatile applications across healthcare, personal care, advanced materials, and
+                            sustainable
+                            product development. Composed entirely of cellulose, it features an interconnected
+                            network
+                            of nanoscale fibres, abundant hydroxyl groups, and a water content exceeding 95%. Its
+                            tunable thickness and adaptable mechanical and rheological properties make it a
+                            promising
+                            platform for developing next-generation material formats.</p>
+
+                        <h4>Key Features & Properties</h4>
+                        <ul>
+                            <li><strong>High Water Content:</strong> More than 95% water, providing a hydrated,
+                                hydrogel-like structure.</li>
+                            <li><strong>High Purity:</strong> Composed of cellulose, a polymer of repeating glucose
+                                units rich in hydroxyl functional groups.</li>
+                            <li><strong>Tunable Thickness:</strong> Customizable from a few micrometres to several
+                                millimetres.</li>
+                            <li><strong>Nanofibrous Architecture:</strong> Initial hydrogel nanofibres typically
+                                range
+                                from 20–60 nm in diameter, with larger apparent fibre dimensions possible at greater
+                                thicknesses due to aggregation.</li>
+                            <li><strong>Mechanical Flexibility:</strong> Can withstand tensile strains of up to 30%.
+                            </li>
+                            <li><strong>Adaptable Flow Behaviour:</strong> Thin films can undergo plastic
+                                deformation.
+                                The rheological flow point varies from approximately 0.5 to 20 Pa, depending on
+                                thickness.</li>
+                            <li><strong>Thermal Stability:</strong> Reported to remain stable at temperatures up to
+                                200°C under the conditions evaluated.</li>
+                        </ul>
+
+                        <h4>Designed for Diverse Applications</h4>
+                        <p>Its high water content, nanoscale fibrous network, functional hydroxyl groups, and
+                            tunable
+                            physical properties offer opportunities for applications in wound care, tissue
+                            engineering,
+                            active-ingredient delivery, personal care formulations, and functional material
+                            development.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="images/drybc.jpg" alt="Dried Sheets and Composites" class="product-image">
+                <div class="product-content">
+                    <h3>Dried Sheets & Composites</h3>
+                    <h4>Engineered Porosity. Customizable Structure.</h4>
+                    <p>Lightweight materials whose density, porosity, and rehydration behaviour can be tailored
+                        through
+                        controlled drying methods (oven-dried or freeze-dried).</p>
+                    <ul class="features-list">
+                        <li><strong>Oven-Dried:</strong> Dense, compact structures.</li>
+                        <li><strong>Freeze-Dried:</strong> Highly porous network, reswellable.</li>
+                        <li><strong>Versatile Use:</strong> Filtration, sustainable packaging, wound-care.</li>
+                    </ul>
+
+                    <!-- Read More Button -->
+                    <button class="read-more-btn" onclick="openModal('sheets-details')">Read More
+                        <span>→</span></button>
+
+                    <!-- Hidden Full Details for the Popup -->
+                    <div id="sheets-details" style="display: none;">
+                        <h3>Dried Sheets & Composites</h3>
+                        <h4>Engineered Porosity. Customizable Structure. Versatile Performance.</h4>
+                        <p>Bacterial Cellulose Dried Sheets are lightweight, cellulose-based materials whose
+                            density,
+                            porosity, and rehydration behaviour can be tailored through controlled drying methods.
+                            Depending on the drying process, the sheets can be engineered as dense, compact
+                            structures
+                            or highly porous, reswellable networks, enabling versatility across healthcare, personal
+                            care, packaging, filtration, and advanced material applications.</p>
+
+                        <h4>Key Features & Properties</h4>
+                        <ul>
+                            <li><strong>Customizable Microstructure:</strong> Sheet density and porosity can be
+                                tailored
+                                by selecting the appropriate drying method.</li>
+                            <li><strong>Oven-Dried Sheets:</strong> Form dense, compact structures with reduced
+                                porosity.</li>
+                            <li><strong>Freeze-Dried Sheets:</strong> Retain a highly porous network with the
+                                ability to
+                                reabsorb water and reswell.</li>
+                            <li><strong>Cellulose-Based Composition:</strong> Derived from bacterial cellulose, with
+                                a
+                                nanofibrous architecture and abundant hydroxyl functional groups.</li>
+                            <li><strong>Application-Driven Design:</strong> Drying conditions can be selected to
+                                achieve
+                                the desired balance of compactness, porosity, and rehydration performance.</li>
+                        </ul>
+
+                        <h4>Potential Applications</h4>
+                        <p>Suitable for exploring applications in wound-care materials, absorbent products,
+                            active-ingredient delivery, filtration, sustainable packaging, and functional
+                            cellulose-based composites.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="images/Patterned.jpg" alt="Patterned Cellulose" class="product-image">
+                <div class="product-content">
+                    <h3>Patterned Bacterial Cellulose</h3>
+                    <h4>Engineered Topography. Nature-Inspired.</h4>
+                    <p>Combines a nanofibrous network with customizable surface architectures via imprinting. Ideal
+                        for
+                        applications requiring spatial organization and microscale features.</p>
+                    <ul class="features-list">
+                        <li><strong>Custom Geometries:</strong> Tailored feature sizes and patterns.</li>
+                        <li><strong>Templates & Replication:</strong> Transfer surface features.</li>
+                        <li><strong>Microfluidics:</strong> Structured substrates for fluid handling.</li>
+                    </ul>
+
+                    <!-- Read More Button -->
+                    <button class="read-more-btn" onclick="openModal('patterned-details')">Read More
+                        <span>→</span></button>
+
+                    <!-- Hidden Full Details for the Popup -->
+                    <div id="patterned-details" style="display: none;">
+                        <h3>Patterned Bacterial Cellulose</h3>
+                        <h4>Engineered Topography. Nature-Inspired Functionality.</h4>
+                        <p>Patterned Bacterial Cellulose combines the inherent advantages of a nanofibrous cellulose
+                            network with customizable surface architectures. Through imprinting techniques and
+                            patterning during bacterial cellulose production, a variety of surface features,
+                            geometries,
+                            and feature sizes can be created to meet specific application requirements.</p>
+                        <p>By integrating controlled surface topography with the flexibility of bacterial cellulose
+                            processing, Rekrite enables the development of functional material platforms for
+                            applications where surface structure, spatial organization, and microscale features play
+                            a
+                            critical role.</p>
+
+                        <h4>Key Features & Capabilities</h4>
+                        <ul>
+                            <li><strong>Versatile Patterning Methods:</strong> Surface patterns can be introduced
+                                through imprinting or during bacterial cellulose production.</li>
+                            <li><strong>Customizable Feature Size:</strong> A range of feature dimensions,
+                                geometries,
+                                and surface architectures can be explored.</li>
+                            <li><strong>Nanofibrous Cellulose Network:</strong> Combines nanoscale fibrous structure
+                                with engineered surface features.</li>
+                            <li><strong>Application-Specific Design:</strong> Patterns can be tailored to suit
+                                functional, biological, or microstructured material requirements.</li>
+                        </ul>
+
+                        <h4>Potential Applications</h4>
+                        <ul>
+                            <li><strong>Templates and Replication:</strong> Patterned substrates for transferring
+                                surface features to other materials.</li>
+                            <li><strong>Security Paper:</strong> Surface-textured cellulose materials for exploring
+                                distinctive patterns and authentication features.</li>
+                            <li><strong>Microfluidics:</strong> Structured substrates for developing microscale
+                                fluid-handling platforms.</li>
+                            <li><strong>Cell Growth and Tissue Engineering:</strong> Topographical cues to influence
+                                cell attachment, alignment, and organization.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Porous Beads -->
+            <div class="product-card">
+                <!-- NEW Media Carousel (Video + Images) -->
+                <div class="product-media-carousel">
+                    <!-- Item 1: Auto-playing Video -->
+                    <div class="carousel-item active">
+                        <!-- 'muted' and 'playsinline' are required for browsers to allow autoplay -->
+                        <video src="images/beads1.mp4" autoplay muted playsinline></video>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- 'muted' and 'playsinline' are required for browsers to allow autoplay -->
+                        <video src="images/beads2.mp4" autoplay muted playsinline></video>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- 'muted' and 'playsinline' are required for browsers to allow autoplay -->
+                        <video src="images/beads3.mp4" autoplay muted playsinline></video>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- 'muted' and 'playsinline' are required for browsers to allow autoplay -->
+                        <video src="images/beadslast.mp4" autoplay muted playsinline></video>
+                    </div>
+                    <!-- Item 2: Image -->
+                    <div class="carousel-item">
+                        <img src="images/Beads 2.png" alt="Porous Beads View 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/beads.png" alt="Porous Beads View 1">
+                    </div>
+                    <!-- Item 3: Image -->
+                    <div class="carousel-item">
+                        <img src="images/beadssem.jpg" alt="Porous Beads View 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/beadssem2.jpg" alt="Porous Beads View 2">
+                    </div>
+
+                    <!-- Navigation Arrows -->
+                    <button class="carousel-arrow prev-arrow" onclick="moveCarousel(this, -1)">&#10094;</button>
+                    <button class="carousel-arrow next-arrow" onclick="moveCarousel(this, 1)">&#10095;</button>
+                </div>
+                <!-- END Media Carousel -->
+                <div class="product-content">
+                    <h3>Porous Beads</h3>
+                    <h4>Fermentation-Formed. Highly Hydrated.</h4>
+                    <p>Spherical structures with exceptional water-holding capacity (exceeding 100x their dry
+                        weight). A
+                        versatile platform for hydration and active-ingredient delivery.</p>
+                    <ul class="features-list">
+                        <li><strong>Cellular Architecture:</strong> Deep porous internal structure.</li>
+                        <li><strong>Customizable Size:</strong> Ranging from 0.5 mm to 5 mm.</li>
+                        <li><strong>Agriculture & Care:</strong> Water-retention and nutrient carriers.</li>
+                    </ul>
+
+                    <!-- Read More Button -->
+                    <button class="read-more-btn" onclick="openModal('beads-details')">Read More
+                        <span>→</span></button>
+
+                    <!-- Hidden Full Details for the Popup -->
+                    <div id="beads-details" style="display: none;">
+                        <h3>Bacterial Cellulose Porous Beads</h3>
+                        <h4>Fermentation-Formed. Highly Hydrated. Naturally Structured.</h4>
+                        <p>Bacterial Cellulose Porous Beads are spherical, porous cellulose-based structures
+                            produced
+                            directly during fermentation. Featuring a cellular internal architecture and exceptional
+                            water-holding capacity, these beads can absorb and retain water at levels exceeding 100
+                            times their own dry weight. With sizes ranging from 0.5 mm to 5 mm, they offer a
+                            versatile
+                            platform for applications requiring highly hydrated, porous, and functional
+                            biomaterials.
+                        </p>
+
+                        <h4>Key Features & Properties</h4>
+                        <ul>
+                            <li><strong>Fermentation-Based Production:</strong> Beads form during bacterial
+                                cellulose
+                                fermentation.</li>
+                            <li><strong>Exceptional Water-Holding Capacity:</strong> Can hold water exceeding 100
+                                times
+                                their dry weight under suitable conditions.</li>
+                            <li><strong>Cellular Architecture:</strong> Features a porous internal structure that
+                                can be
+                                explored for fluid retention and material loading.</li>
+                            <li><strong>Customizable Size Range:</strong> Bead diameters from 0.5 mm to 5 mm.</li>
+                            <li><strong>Cellulose-Based Composition:</strong> Combines a hydrated, porous structure
+                                with
+                                the inherent functional chemistry of cellulose.</li>
+                        </ul>
+
+                        <h4>Potential Applications</h4>
+                        <ul>
+                            <li><strong>Agriculture:</strong> Water-retention materials and carriers for nutrients
+                                or
+                                beneficial actives.</li>
+                            <li><strong>Personal Care:</strong> Functional beads for exploring hydration and
+                                controlled
+                                delivery in formulations.</li>
+                            <li><strong>Healthcare:</strong> Research platforms for fluid management and biomaterial
+                                development.</li>
+                            <li><strong>Active-Ingredient Delivery:</strong> Porous structures for investigating the
+                                loading and release of selected compounds.</li>
+                            <li><strong>Sustainable Materials:</strong> Cellulose-based alternatives for
+                                applications
+                                requiring porous, water-rich beads.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5: Nanocellulose Slurries -->
+            <div class="product-card">
+                <!-- Product 4: Porous Beads -->
+                <div class="product-card">
+                    <!-- NEW Media Carousel (Video + Images) -->
+                    <div class="product-media-carousel">
+
+                        <!-- Item 2: Image -->
+                        <div class="carousel-item">
+                            <img src="images/Slurry.jpeg" alt="Nanocellulose Slurries View 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/slurry1.jpg" alt="Nanocellulose Slurries View 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/Slurry2.jpg" alt="Nanocellulose Slurries View 1">
+                        </div>
+                        <!-- Item 3: Image -->
+                        <div class="carousel-item">
+                            <img src="images/cnf.jpg" alt="Nanocellulose Slurries View 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/cnf2.jpg" alt="Nanocellulose Slurries View 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/cnf3.jpg" alt="Nanocellulose Slurries View 4">
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <button class="carousel-arrow prev-arrow" onclick="moveCarousel(this, -1)">&#10094;</button>
+                        <button class="carousel-arrow next-arrow" onclick="moveCarousel(this, 1)">&#10095;</button>
+                    </div>
+                    <!-- END Media Carousel -->
+                    <div class="product-content">
+                        <h3>Nanocellulose Slurries</h3>
+                        <h4>Nanoscale Cellulose. Functional Chemistry.</h4>
+                        <p>Aqueous suspensions based on cellulose nanofibres (CNFs) and nanocrystals (CNCs). Can be
+                            functionalised using acids, oxidising agents, and deep eutectic solvents.</p>
+                        <ul class="features-list">
+                            <li><strong>Rich Chemistry:</strong> Abundant hydroxyl groups.</li>
+                            <li><strong>Advanced Processing:</strong> Coatings, films, and nanocomposites.</li>
+                            <li><strong>Environmental Use:</strong> Adsorption, separation, and filtration.</li>
+                        </ul>
+
+                        <!-- Read More Button -->
+                        <button class="read-more-btn" onclick="openModal('slurries-details')">Read More
+                            <span>→</span></button>
+
+                        <!-- Hidden Full Details for the Popup -->
+                        <div id="slurries-details" style="display: none;">
+                            <h3>Bacterial Cellulose-Based Nanocellulose Slurries</h3>
+                            <h4>Nanoscale Cellulose. Functional Chemistry. Endless Possibilities.</h4>
+                            <p>Rekrite's nanocellulose slurries are aqueous suspensions based on cellulose nanofibres
+                                (CNFs)
+                                and cellulose nanocrystals (CNCs), designed as versatile building blocks for advanced
+                                material development. Leveraging the abundant hydroxyl groups of cellulose, these
+                                materials
+                                can be functionalised and processed using selected acids, oxidising agents, and deep
+                                eutectic solvents to introduce diverse chemical functionalities and tailor material
+                                performance.</p>
+                            <p>From surface modification to the development of functional nanocomposites, these slurries
+                                provide a flexible starting point for creating application-specific, cellulose-based
+                                solutions.</p>
+
+                            <h4>Key Features & Capabilities</h4>
+                            <ul>
+                                <li><strong>Nanocellulose Building Blocks:</strong> Available as cellulose nanofibre-
+                                    and
+                                    cellulose nanocrystal-based aqueous suspensions.</li>
+                                <li><strong>Water-Based Formulation:</strong> Suspended in water for versatile
+                                    processing
+                                    and material development.</li>
+                                <li><strong>Customisable Functionalisation:</strong> Chemical modification using
+                                    suitable
+                                    acids, oxidising agents, and deep eutectic solvents.</li>
+                                <li><strong>Rich Surface Chemistry:</strong> Abundant hydroxyl groups offer
+                                    opportunities to
+                                    introduce a wide range of functional groups.</li>
+                                <li><strong>Flexible Processing:</strong> Adaptable starting materials for developing
+                                    coatings, films, composites, gels, and other functional architectures.</li>
+                            </ul>
+
+                            <h4>Potential Applications</h4>
+                            <ul>
+                                <li><strong>Coatings and Films:</strong> Functional surface layers and
+                                    nanocellulose-based
+                                    films.</li>
+                                <li><strong>Advanced Composites:</strong> Reinforcement and functionalisation of polymer
+                                    matrices.</li>
+                                <li><strong>Healthcare and Personal Care:</strong> Development of functional carriers
+                                    and
+                                    material platforms.</li>
+                                <li><strong>Packaging:</strong> Cellulose-based coatings and composite materials.</li>
+                                <li><strong>Environmental Applications:</strong> Exploration of functional nanocellulose
+                                    for
+                                    adsorption, separation, and filtration.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+    </section>
+    <!-- Microencapsulation Expertise Section -->
+    <section id="microencapsulation" class="highlight-section">
+        <!-- Centered Section Titles -->
+        <div class="highlight-header">
+            <h2>Expertise in Microencapsulation</h2>
+            <h3 class="highlight-subtitle">Advanced Carrier & Controlled-Release Solutions</h3>
+        </div>
+
+        <!-- Side-by-Side Content -->
+        <div class="highlight-container">
+            <div class="highlight-content">
+                <p>Microencapsulation is revolutionizing active ingredient delivery in the pharmaceutical,
+                    cosmeceutical, and personal care industries. At Rekrite, we specialize in formulating
+                    trigger-responsive delivery systems that protect sensitive compounds and release them precisely when
+                    and where they are needed.</p>
+                <ul class="highlight-features">
+                    <li><strong>Active Protection:</strong> Shields sensitive bio-actives, vitamins, and APIs from
+                        environmental degradation.</li>
+                    <li><strong>Controlled Release:</strong> Advanced matrices responsive to pH, thermal, or mechanical
+                        friction triggers.</li>
+                    <li><strong>Custom Formulations:</strong> Purpose-built and scaled for seamless integration into
+                        industry-specific products.</li>
+                </ul>
+                <a href="#co-creation" class="btn highlight-btn">Formulate With Us</a>
+            </div>
+
+            <div class="highlight-image">
+                <img src="images/Microencapsules.jpg" alt="Microcapsules for Pharma and Cosmetics">
+            </div>
+        </div>
+    </section>
+
+    <!-- Co-Creation Framework & Re-AI Workspace -->
+    <section id="co-creation">
+        <div class="co-creation-content">
+            <h2 class="section-title">Cultivating a Shared Material Future</h2>
+            <p>True transformation doesn't happen in isolation. Let's pool our capabilities to evaluate ideas early,
+                solve technical challenges, and co-create next-generation bioproducts faster.</p>
+
+            <!-- Re-AI Interactive Workspace -->
+            <div class="re-ai-workspace">
+                <div class="workspace-header">
+                    <h3>Re-AI Solution Matcher</h3>
+                    <p>Describe your application or industry challenge, and Re-AI will recommend the ideal bacterial
+                        cellulose platform for your project.</p>
+                </div>
+
+                <div class="workspace-body">
+                    <div class="input-group">
+                        <label for="app-industry">Target Industry (Optional)</label>
+                        <select id="app-industry">
+                            <option value="any">Any / Unsure</option>
+                            <option value="healthcare">Healthcare & Wound Care</option>
+                            <option value="agriculture">Agriculture</option>
+                            <option value="personal-care">Personal Care & Cosmetics</option>
+                            <option value="packaging">Sustainable Packaging</option>
+                            <option value="electronics">Electronics & Sensors</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="app-description">What are you trying to build or solve?</label>
+                        <textarea id="app-description" rows="3"
+                            placeholder="e.g., 'I need a material that can slowly release fertilizer in dry soil' or 'Looking for a highly flexible, water-rich patch for skin treatment.'"></textarea>
+                    </div>
+
+                    <button class="btn workspace-btn" onclick="runReAI()">Analyze with Re-AI</button>
+                </div>
+
+                <!-- Results Output Area -->
+                <div id="re-ai-results" class="workspace-results hidden">
+                    <!-- JavaScript will inject the recommended product here -->
+                </div>
+            </div>
+
+            <!-- Standard Benefits Below -->
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>13+ Years of Expertise</h4>
+                    <p>Leverage over a decade of deep research in tuning, functionalizing, and scaling bacterial
+                        nanocellulose from IIT Hyderabad.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Material Tailoring</h4>
+                    <p>We engineer BNC across multiple physical formats to perfectly match your exact processing
+                        conditions and product goals.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Investment & Scale-Up Section -->
+        <section id="investment">
+            <div class="investment-container">
+                <h2 class="section-title">Invest in the Future of Bio-Materials</h2>
+                <p class="investment-intro">
+                    Rekrite Herbaceuticals is actively seeking strategic capital to scale our operations. We have
+                    successfully transitioned from fundamental research to tangible manufacturing capabilities,
+                    establishing India as a hub for advanced bacterial cellulose production.
+                </p>
+
+                <div class="readiness-banner">
+                    <div class="readiness-item">
+                        <h3>Current Status: TRL 4+ & Pilot Ready</h3>
+                        <p>We have successfully validated our material platforms in the laboratory and established
+                            <strong>pilot-scale fermentation facilities</strong>. Our core technologies are de-risked,
+                            reproducible, and ready for the next phase of industrial commercialization.
+                        </p>
+                    </div>
+                    <div class="readiness-item">
+                        <h3>Ready for Commercial Scale-Up</h3>
+                        <p>With customer or investor backing, our facility is immediately prepared to execute
+                            <strong>large-scale commercial production</strong> of specific high-demand formats,
+                            including our <strong>Nanocellulose Slurries</strong> and <strong>Porous Beads</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Investment & Partnership Avenues</h3>
+                <div class="investment-options">
+
+                    <div class="invest-card">
+                        <h4>Direct Equity & SAFE Notes</h4>
+                        <p>The standard for high-growth startups. We are open to Seed/Series funding via Equity or
+                            Simple Agreements for Future Equity (SAFE) to fund our large-scale manufacturing plant and
+                            expand our R&D pipeline.</p>
+                    </div>
+
+                    <div class="invest-card">
+                        <h4>Joint Ventures (JV)</h4>
+                        <p>Ideal for industry players (e.g., agriculture, personal care, or healthcare) seeking
+                            exclusive access to our materials. We co-invest in a dedicated production line tailored to
+                            your specific supply chain needs.</p>
+                    </div>
+
+                    <div class="invest-card">
+                        <h4>Customer-Funded Production</h4>
+                        <p>For clients needing high volumes of specific products like our slurries or beads. By
+                            providing upfront capital for machinery and raw materials, we guarantee dedicated
+                            large-scale manufacturing output for your brand.</p>
+                    </div>
+
+                    <div class="invest-card">
+                        <h4>Strategic R&D Partnerships</h4>
+                        <p>Co-funding opportunities to develop proprietary material IP. We leverage our pilot facilities
+                            and expertise to prototype, test, and scale a custom solution specifically for your product
+                            roadmap.</p>
+                    </div>
+
+                </div>
+
+                <div class="pitch-cta">
+                    <p>Are you an angel investor, VC, or industrial partner ready to scale next-generation materials?
+                    </p>
+                    <button class="btn" onclick="openPitchRequest()">Request Pitch Deck & Financials</button>
+                </div>
+            </div>
+
+        </section>
+        <!-- Universal Product Details Popup (Modal) -->
+        <div id="product-modal" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <div id="modal-body">
+                    <!-- JavaScript will inject the specific product details here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Comprehensive Footer Section -->
+        <footer id="footer">
+            <div class="footer-container">
+                <!-- Column 1: Brand -->
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">Rekrite</div>
+                    <p>Co-creating nature-inspired material solutions for a sustainable, high-performance future.</p>
+                    <div class="social-links">
+                        <!-- Replace '#' with your actual social media URLs -->
+                        <a href="#" aria-label="LinkedIn" class="social-icon">LinkedIn</a>
+
+                        <a href="#" aria-label="Instagram" class="social-icon">Instagram</a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Contact & Address -->
+                <div class="footer-col contact-col">
+                    <h4>Contact Us</h4>
+                    <p><strong>Email:</strong> rekriteherboceuticals@gmail.com</p>
+                    <p><strong>Phone:</strong> +91 (Insert Phone Number)</p>
+                    <br>
+                    <p><strong>Headquarters & Labs:</strong></p>
+                    <p>Rekrite Herboceuticals Pvt. Ltd.<br>
+                        Indian Institute of Technology (IIT) Hyderabad<br>
+                        Kandi, Sangareddy, Telangana 502284<br>
+                        India</p>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="footer-col links-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">The Rekrite Story</a></li>
+                        <li><a href="#products">Material Platforms</a></li>
+                        <li><a href="#microencapsulation">Microencapsulation</a></li>
+                        <li><a href="#investment">Investor Relations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Our Ecosystem (Other Websites) -->
+                <div class="footer-col eco-col">
+                    <h4>Our Ecosystem</h4>
+                    <ul>
+                        <li><a href="https://www.duckit.in/" target="_blank" rel="noopener">Duck IT</a></li>
+
+                        <li><a href="https://people.iith.ac.in/mudrika/" target="_blank" rel="noopener">The Cellulose
+                                Group</a></li>
+                        <li><a href="https://iith.ac.in/" target="_blank" rel="noopener">IIT Hyderabad</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rekrite Herboceuticals Pvt Ltd. All rights reserved. | <a href="#">Privacy Policy</a></p>
+            </div>
+        </footer>
+        <!-- Re-AI Interactive Widget -->
+        <div id="re-ai-widget">
+            <div class="re-ai-header" onclick="toggleAI()">
+                <h4><span class="status-dot"></span> Re-AI Assistant</h4>
+                <span id="ai-toggle-icon">▲</span>
+            </div>
+            <div class="re-ai-body" id="chat-body">
+                <div class="chat-bubble ai-message">
+                    Hello! I am Re-AI, the Rekrite materials intelligence assistant. Are you looking to collaborate on a
+                    specific industry application or explore our cellulose capabilities?
+                </div>
+            </div>
+            <div class="re-ai-input">
+                <input type="text" id="ai-input" placeholder="Ask about our materials..."
+                    onkeypress="handleEnter(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <!-- JavaScript for Interactivity -->
+        <script>
+            // Re-AI Chatbot Logic
+            const widget = document.getElementById('re-ai-widget');
+            const icon = document.getElementById('ai-toggle-icon');
+            const chatBody = document.getElementById('chat-body');
+            const inputField = document.getElementById('ai-input');
+
+            function toggleAI() {
+                widget.classList.toggle('open');
+                icon.innerText = widget.classList.contains('open') ? '▼' : '▲';
+            }
+
+            function handleEnter(event) {
+                if (event.key === 'Enter') {
+                    sendMessage();
+                }
+            }
+
+
+            function addMessage(text, className) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `chat-bubble ${className}`;
+                msgDiv.innerText = text;
+                chatBody.appendChild(msgDiv);
+                chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to bottom
+            }
+
+            // --- REAL Re-AI Chatbot Logic ---
+            async function sendMessage() {
+                const text = inputField.value.trim();
+                if (!text) return;
+
+                // 1. Show user message
+                addMessage(text, 'user-message');
+                inputField.value = '';
+
+                // 2. Show a temporary "typing..." indicator
+                const typingId = "typing-" + Date.now();
+                addMessage("Thinking...", 'ai-message', typingId);
+
+                try {
+                    // 3. Send the message to your Python backend
+                    // Change this URL to your Google Cloud Run URL once deployed
+                    const response = await fetch("http://localhost:8000/chat", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ message: text })
+                    });
+
+                    const data = await response.json();
+
+                    // 4. Remove "Thinking..." and show the real AI response
+                    document.getElementById(typingId).remove();
+                    addMessage(data.reply, 'ai-message');
+
+                } catch (error) {
+                    document.getElementById(typingId).remove();
+                    addMessage("I'm currently undergoing maintenance. Please email partner@rekrite.com to connect.", 'ai-message');
+                }
+            }
+
+            function addMessage(text, className, id = null) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `chat-bubble ${className}`;
+                if (id) msgDiv.id = id;
+                msgDiv.innerText = text;
+                chatBody.appendChild(msgDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+            // --- REAL Re-AI Workspace Logic (Connected to Server) ---
+            async function runReAI() {
+                const industry = document.getElementById('app-industry').value;
+                const description = document.getElementById('app-description').value.trim();
+                const resultsContainer = document.getElementById('re-ai-results');
+
+                if (!description) {
+                    alert("Please describe what you are trying to build!");
+                    return;
+                }
+
+                // Show a loading state in the results box
+                resultsContainer.innerHTML = `<p style="padding: 1rem; color: var(--primary);">Re-AI is analyzing your application...</p>`;
+                resultsContainer.classList.remove('hidden');
+
+                try {
+                    // Ask the Python server for the smartest match
+                    const response = await fetch("http://localhost:8000/match", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ industry: industry, description: description })
+                    });
+
+                    const match = await response.json();
+
+                    // Display the AI's dynamic Results
+                    resultsContainer.innerHTML = `
+                    <div class="result-card">
+                        <span class="result-tag">${match.tag}</span>
+                        <h4>${match.product}</h4>
+                        <p><strong>Why this fits:</strong> ${match.reason}</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;"><em>Ready to prototype? The Rekrite R&D team can tailor this material to your exact processing conditions.</em></p>
+                    </div>
+                    `;
+                } catch (error) {
+                    resultsContainer.innerHTML = `<p style="color: red;">Error connecting to Re-AI server. Please try again later.</p>`;
+                }
+            }
+
+            // --- REAL Pitch Request Logic (Connected to Server) ---
+            // --- REAL Pitch Request Logic (Connected to Server) ---
+            async function openPitchRequest() {
+                if (!widget.classList.contains('open')) {
+                    toggleAI();
+                }
+
+                const pitchMessage = "I am interested in investment opportunities and would like to request the pitch deck.";
+                addMessage(pitchMessage, "user-message");
+
+                const typingId = "typing-" + Date.now();
+                addMessage("Connecting to Investor Relations...", 'ai-message', typingId);
+
+                try {
+                    // Send to AI server and explicitly request the "investor" role
+                    const response = await fetch("http://localhost:8000/chat", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            message: pitchMessage,
+                            role: "investor" // <-- This tells Python to use the Investor Persona!
+                        })
+                    });
+
+                    const data = await response.json();
+                    document.getElementById(typingId).remove();
+                    addMessage(data.reply, 'ai-message');
+                } catch (error) {
+                    document.getElementById(typingId).remove();
+                    addMessage("Please email partner@rekrite.com to request our pitch deck.", 'ai-message');
+                }
+            }
+            // Hero Text Slideshow Logic
+            const heroSlides = document.querySelectorAll('.hero-slideshow .slide');
+            let currentSlide = 0;
+
+            function nextHeroSlide() {
+                // Fade out current slide
+                heroSlides[currentSlide].classList.remove('active');
+
+                // Move to the next slide (loops back to 0 when it hits the end)
+                currentSlide = (currentSlide + 1) % heroSlides.length;
+
+                // Fade in new slide
+                heroSlides[currentSlide].classList.add('active');
+            }
+            // --- Product Read More Modal Logic ---
+            function openModal(detailsId) {
+                // Get the hidden content for the specific product clicked
+                const detailsHtml = document.getElementById(detailsId).innerHTML;
+
+                // Put that content into the modal window
+                document.getElementById('modal-body').innerHTML = detailsHtml;
+
+                // Show the modal and stop the background page from scrolling
+                document.getElementById('product-modal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                // Hide the modal and restore background scrolling
+                document.getElementById('product-modal').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Close the popup if the user clicks anywhere in the dark background area
+            document.getElementById('product-modal').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+            // --- Smart Product Media Carousel Logic ---
+            const carouselTimers = new Map(); // Tracks timers so manual clicking doesn't cause glitches
+
+            function moveCarousel(element, direction) {
+                // Determine if called by a button click or auto-advance
+                const carousel = element.closest ? element.closest('.product-media-carousel') : element;
+                const items = carousel.querySelectorAll('.carousel-item');
+
+                let activeIndex = 0;
+
+                // Find current active item, pause video if it's playing, and hide it
+                items.forEach((item, index) => {
+                    if (item.classList.contains('active')) {
+                        activeIndex = index;
+                        item.classList.remove('active');
+                        const oldVideo = item.querySelector('video');
+                        if (oldVideo) oldVideo.pause();
+                    }
+                });
+
+                // Calculate new slide index
+                let newIndex = activeIndex + direction;
+                if (newIndex >= items.length) newIndex = 0;
+                if (newIndex < 0) newIndex = items.length - 1;
+
+                // Show new slide
+                items[newIndex].classList.add('active');
+
+                // Trigger playback/timer for the new slide
+                playMedia(carousel);
+            }
+
+            function playMedia(carousel) {
+                // Clear any existing image timers for this carousel
+                if (carouselTimers.has(carousel)) {
+                    clearTimeout(carouselTimers.get(carousel));
+                }
+
+                const activeItem = carousel.querySelector('.carousel-item.active');
+                const video = activeItem.querySelector('video');
+
+                if (video) {
+                    // If it's a video: play it from the start. When it finishes, move to the next slide.
+                    video.currentTime = 0;
+                    video.play().catch(e => console.log("Browser blocked autoplay"));
+
+                    video.onended = () => {
+                        moveCarousel(carousel, 1);
+                    };
+                } else {
+                    // If it's an image: wait 3.5 seconds (3500ms), then move to the next slide.
+                    const timerId = setTimeout(() => {
+                        moveCarousel(carousel, 1);
+                    }, 3500);
+                    carouselTimers.set(carousel, timerId);
+                }
+            }
+
+            // Initialize all carousels as soon as the page loads
+            document.addEventListener('DOMContentLoaded', () => {
+                const carousels = document.querySelectorAll('.product-media-carousel');
+                carousels.forEach(carousel => {
+                    playMedia(carousel);
+                });
+            });
+
+            // Change the slide every 5.5 seconds (5500 milliseconds)
+            setInterval(nextHeroSlide, 5500);
+            // Open Re-AI automatically after 3 seconds to engage user
+            setTimeout(() => {
+                if (!widget.classList.contains('open')) {
+                    toggleAI();
+                }
+            }, 3000);
+        </script>
+</body>
+
+</html>
