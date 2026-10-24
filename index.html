@@ -1106,13 +1106,12 @@
     pointer-events: auto;
 }
 
-/* 3. Mobile-specific height (since text stacks taller on small screens) */
 @media (max-width: 768px) {
+    /* Hero Slideshow Height Fix */
     .hero-slideshow {
-        min-height: 350px; /* Increase this if your longest text still overlaps */
+        min-height: 350px; 
     }
-}
-@media (max-width: 768px) {
+
     /* Existing Header Fixes */
     header {
         flex-direction: column;
@@ -1131,17 +1130,18 @@
         font-size: 0.9rem;
     }
 
-    /* NEW: Hero Overlap & Text Size Fixes */
+    /* Hero Overlap & Text Size Fixes */
     #hero {
-        padding-top: 12rem; /* Pushes the hero content down below the taller mobile header */
+        padding-top: 12rem; 
     }
 
     #hero h1 {
-        font-size: 2.2rem; /* Scales down the massive text so it fits the screen properly */
+        font-size: 2.2rem; 
     }
-    /* NEW: Responsive Chat Widget */
+
+    /* Responsive Chat Widget (Syntax fixed) */
     #re-ai-widget {
-        width: calc(100% - 40px); /* Ensures a 20px margin on both sides */
+        width: calc(100% - 40px);
         right: 20px;
         bottom: 20px;
     }
