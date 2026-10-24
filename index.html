@@ -1113,6 +1113,37 @@
         .next-arrow {
             right: 10px;
         }
+        /* 1. Give the slideshow container a minimum height so it pushes the button down */
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    min-height: 150px; /* Adjust this value for desktop */
+}
+
+/* 2. Ensure slides sit on top of each other properly */
+.hero-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+    pointer-events: none; /* Prevents hidden slides from blocking clicks */
+}
+
+.hero-slideshow .slide.active {
+    opacity: 1;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+/* 3. Mobile-specific height (since text stacks taller on small screens) */
+@media (max-width: 768px) {
+    .hero-slideshow {
+        min-height: 350px; /* Increase this if your longest text still overlaps */
+    }
+}
     </style>
 </head>
 
