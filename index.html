@@ -1144,6 +1144,24 @@
         min-height: 350px; /* Increase this if your longest text still overlaps */
     }
 }
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+}
     </style>
 </head>
 
@@ -1158,6 +1176,7 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#co-creation">Co-creating</a></li>
+                <li><a href="#microencapsulation">Microcapsules</a></li>
                 <li><a href="#investment">Invest</a></li>
             </ul>
         </nav>
