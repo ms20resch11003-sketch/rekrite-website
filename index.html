@@ -1508,105 +1508,128 @@
             <div class="product-card">
                 <!-- Product 4: Porous Beads -->
                 <div class="product-card">
-                    <!-- NEW Media Carousel (Video + Images) -->
-                    <div class="product-media-carousel">
+                    <div class="product-card">
+                        <!-- NEW Media Carousel (Video + Images) -->
+                        <div class="product-media-carousel">
 
-                        <!-- Item 2: Image -->
-                        <div class="carousel-item">
-                            <img src="images/Slurry.jpeg" alt="Nanocellulose Slurries View 4">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/slurry1.jpg" alt="Nanocellulose Slurries View 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/Slurry2.jpg" alt="Nanocellulose Slurries View 1">
-                        </div>
-                        <!-- Item 3: Image -->
-                        <div class="carousel-item">
-                            <img src="images/cnf.jpg" alt="Nanocellulose Slurries View 3">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/cnf2.jpg" alt="Nanocellulose Slurries View 4">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/cnf3.jpg" alt="Nanocellulose Slurries View 4">
+                            <!-- NOTE: Video temporarily removed until you have the file. 
+                         The first image is now set to 'active'. -->
+
+                            <!-- Item 1: Image (Now Active) -->
+                            <div class="carousel-item active">
+                                <img src="images/Slurry.jpeg" alt="Nanocellulose Slurries View 1">
+                            </div>
+
+                            <!-- Item 2: Image -->
+                            <div class="carousel-item">
+                                <img src="images/slurry1.jpg" alt="Nanocellulose Slurries View 2">
+                            </div>
+
+                            <!-- Item 3: Image -->
+                            <div class="carousel-item">
+                                <img src="images/slurry2.jpg" alt="Nanocellulose Slurries View 3">
+                            </div>
+
+                            <!-- Item 4: Image -->
+                            <div class="carousel-item">
+                                <img src="images/cnf.jpg" alt="Nanocellulose Slurries View 4">
+                            </div>
+
+                            <!-- Item 5: Image -->
+                            <div class="carousel-item">
+                                <img src="images/cnf2.jpg" alt="Nanocellulose Slurries View 5">
+                            </div>
+
+                            <!-- Item 6: Image -->
+                            <div class="carousel-item">
+                                <img src="images/cnf3.jpg" alt="Nanocellulose Slurries View 6">
+                            </div>
+
+                            <!-- Navigation Arrows -->
+                            <button class="carousel-arrow prev-arrow" onclick="moveCarousel(this, -1)">&#10094;</button>
+                            <button class="carousel-arrow next-arrow" onclick="moveCarousel(this, 1)">&#10095;</button>
                         </div>
 
-                        <!-- Navigation Arrows -->
-                        <button class="carousel-arrow prev-arrow" onclick="moveCarousel(this, -1)">&#10094;</button>
-                        <button class="carousel-arrow next-arrow" onclick="moveCarousel(this, 1)">&#10095;</button>
-                    </div>
-                    <!-- END Media Carousel -->
-                    <div class="product-content">
-                        <h3>Nanocellulose Slurries</h3>
-                        <h4>Nanoscale Cellulose. Functional Chemistry.</h4>
-                        <p>Aqueous suspensions based on cellulose nanofibres (CNFs) and nanocrystals (CNCs). Can be
-                            functionalised using acids, oxidising agents, and deep eutectic solvents.</p>
-                        <ul class="features-list">
-                            <li><strong>Rich Chemistry:</strong> Abundant hydroxyl groups.</li>
-                            <li><strong>Advanced Processing:</strong> Coatings, films, and nanocomposites.</li>
-                            <li><strong>Environmental Use:</strong> Adsorption, separation, and filtration.</li>
-                        </ul>
-
-                        <!-- Read More Button -->
-                        <button class="read-more-btn" onclick="openModal('slurries-details')">Read More
-                            <span>→</span></button>
-
-                        <!-- Hidden Full Details for the Popup -->
-                        <div id="slurries-details" style="display: none;">
-                            <h3>Bacterial Cellulose-Based Nanocellulose Slurries</h3>
-                            <h4>Nanoscale Cellulose. Functional Chemistry. Endless Possibilities.</h4>
-                            <p>Rekrite's nanocellulose slurries are aqueous suspensions based on cellulose nanofibres
-                                (CNFs)
-                                and cellulose nanocrystals (CNCs), designed as versatile building blocks for advanced
-                                material development. Leveraging the abundant hydroxyl groups of cellulose, these
-                                materials
-                                can be functionalised and processed using selected acids, oxidising agents, and deep
-                                eutectic solvents to introduce diverse chemical functionalities and tailor material
-                                performance.</p>
-                            <p>From surface modification to the development of functional nanocomposites, these slurries
-                                provide a flexible starting point for creating application-specific, cellulose-based
-                                solutions.</p>
-
-                            <h4>Key Features & Capabilities</h4>
-                            <ul>
-                                <li><strong>Nanocellulose Building Blocks:</strong> Available as cellulose nanofibre-
-                                    and
-                                    cellulose nanocrystal-based aqueous suspensions.</li>
-                                <li><strong>Water-Based Formulation:</strong> Suspended in water for versatile
-                                    processing
-                                    and material development.</li>
-                                <li><strong>Customisable Functionalisation:</strong> Chemical modification using
-                                    suitable
-                                    acids, oxidising agents, and deep eutectic solvents.</li>
-                                <li><strong>Rich Surface Chemistry:</strong> Abundant hydroxyl groups offer
-                                    opportunities to
-                                    introduce a wide range of functional groups.</li>
-                                <li><strong>Flexible Processing:</strong> Adaptable starting materials for developing
-                                    coatings, films, composites, gels, and other functional architectures.</li>
+                        <!-- END Media Carousel -->
+                        <div class="product-content">
+                            <h3>Nanocellulose Slurries</h3>
+                            <h4>Nanoscale Cellulose. Functional Chemistry.</h4>
+                            <p>Aqueous suspensions based on cellulose nanofibres (CNFs) and nanocrystals (CNCs). Can be
+                                functionalised using acids, oxidising agents, and deep eutectic solvents.</p>
+                            <ul class="features-list">
+                                <li><strong>Rich Chemistry:</strong> Abundant hydroxyl groups.</li>
+                                <li><strong>Advanced Processing:</strong> Coatings, films, and nanocomposites.</li>
+                                <li><strong>Environmental Use:</strong> Adsorption, separation, and filtration.</li>
                             </ul>
 
-                            <h4>Potential Applications</h4>
-                            <ul>
-                                <li><strong>Coatings and Films:</strong> Functional surface layers and
-                                    nanocellulose-based
-                                    films.</li>
-                                <li><strong>Advanced Composites:</strong> Reinforcement and functionalisation of polymer
-                                    matrices.</li>
-                                <li><strong>Healthcare and Personal Care:</strong> Development of functional carriers
-                                    and
-                                    material platforms.</li>
-                                <li><strong>Packaging:</strong> Cellulose-based coatings and composite materials.</li>
-                                <li><strong>Environmental Applications:</strong> Exploration of functional nanocellulose
-                                    for
-                                    adsorption, separation, and filtration.</li>
-                            </ul>
+                            <!-- Read More Button -->
+                            <button class="read-more-btn" onclick="openModal('slurries-details')">Read More
+                                <span>→</span></button>
+
+                            <!-- Hidden Full Details for the Popup -->
+                            <div id="slurries-details" style="display: none;">
+                                <h3>Bacterial Cellulose-Based Nanocellulose Slurries</h3>
+                                <h4>Nanoscale Cellulose. Functional Chemistry. Endless Possibilities.</h4>
+                                <p>Rekrite's nanocellulose slurries are aqueous suspensions based on cellulose
+                                    nanofibres
+                                    (CNFs)
+                                    and cellulose nanocrystals (CNCs), designed as versatile building blocks for
+                                    advanced
+                                    material development. Leveraging the abundant hydroxyl groups of cellulose, these
+                                    materials
+                                    can be functionalised and processed using selected acids, oxidising agents, and deep
+                                    eutectic solvents to introduce diverse chemical functionalities and tailor material
+                                    performance.</p>
+                                <p>From surface modification to the development of functional nanocomposites, these
+                                    slurries
+                                    provide a flexible starting point for creating application-specific, cellulose-based
+                                    solutions.</p>
+
+                                <h4>Key Features & Capabilities</h4>
+                                <ul>
+                                    <li><strong>Nanocellulose Building Blocks:</strong> Available as cellulose
+                                        nanofibre-
+                                        and
+                                        cellulose nanocrystal-based aqueous suspensions.</li>
+                                    <li><strong>Water-Based Formulation:</strong> Suspended in water for versatile
+                                        processing
+                                        and material development.</li>
+                                    <li><strong>Customisable Functionalisation:</strong> Chemical modification using
+                                        suitable
+                                        acids, oxidising agents, and deep eutectic solvents.</li>
+                                    <li><strong>Rich Surface Chemistry:</strong> Abundant hydroxyl groups offer
+                                        opportunities to
+                                        introduce a wide range of functional groups.</li>
+                                    <li><strong>Flexible Processing:</strong> Adaptable starting materials for
+                                        developing
+                                        coatings, films, composites, gels, and other functional architectures.</li>
+                                </ul>
+
+                                <h4>Potential Applications</h4>
+                                <ul>
+                                    <li><strong>Coatings and Films:</strong> Functional surface layers and
+                                        nanocellulose-based
+                                        films.</li>
+                                    <li><strong>Advanced Composites:</strong> Reinforcement and functionalisation of
+                                        polymer
+                                        matrices.</li>
+                                    <li><strong>Healthcare and Personal Care:</strong> Development of functional
+                                        carriers
+                                        and
+                                        material platforms.</li>
+                                    <li><strong>Packaging:</strong> Cellulose-based coatings and composite materials.
+                                    </li>
+                                    <li><strong>Environmental Applications:</strong> Exploration of functional
+                                        nanocellulose
+                                        for
+                                        adsorption, separation, and filtration.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
-
-
-            </div>
     </section>
     <!-- Microencapsulation Expertise Section -->
     <section id="microencapsulation" class="highlight-section">
