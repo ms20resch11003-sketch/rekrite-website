@@ -897,42 +897,9 @@
             margin: 0 auto 2rem auto;
         }
 
-        .hero-slideshow .slide {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            margin: 0;
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-            font-size: 1.15rem;
-            color: var(--text-main);
-            text-align: center;
-            pointer-events: none;
-        }
+     
 
-        .hero-slideshow .slide.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .hero-cta-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--secondary);
-        }
-
-        @media (max-width: 768px) {
-            .hero-slideshow {
-                height: 220px;
-            }
-
-            .hero-slideshow .slide {
-                font-size: 1.05rem;
-            }
-        }
+        
 
         /* --- Read More Button & Modal Styles --- */
         .read-more-btn {
@@ -1126,10 +1093,11 @@
     top: 0;
     left: 0;
     width: 100%;
+    text-align: center; /* Forces the text back to the center */
     opacity: 0;
     transition: opacity 1s ease-in-out;
     z-index: 1;
-    pointer-events: none; /* Prevents hidden slides from blocking clicks */
+    pointer-events: none; 
 }
 
 .hero-slideshow .slide.active {
@@ -1145,6 +1113,7 @@
     }
 }
 @media (max-width: 768px) {
+    /* Existing Header Fixes */
     header {
         flex-direction: column;
         padding: 1rem;
@@ -1160,6 +1129,15 @@
 
     nav ul li a {
         font-size: 0.9rem;
+    }
+
+    /* NEW: Hero Overlap & Text Size Fixes */
+    #hero {
+        padding-top: 12rem; /* Pushes the hero content down below the taller mobile header */
+    }
+
+    #hero h1 {
+        font-size: 2.2rem; /* Scales down the massive text so it fits the screen properly */
     }
 }
     </style>
