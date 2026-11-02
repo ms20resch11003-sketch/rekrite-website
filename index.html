@@ -171,14 +171,16 @@
                 background: rgba(243, 235, 240, 0.98);
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
                 max-height: 0;
-                /* Hidden state */
                 overflow: hidden;
+                /* Hides content when closed */
                 transition: max-height 0.4s ease-in-out;
             }
 
-            /* Expanded state triggered by JS */
             .nav-menu.active {
-                max-height: 400px;
+                /* Allows the menu to take up to the full remaining screen height */
+                max-height: calc(100vh - 80px);
+                /* Enables vertical scrolling if the links exceed the screen size */
+                overflow-y: auto;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             }
 
