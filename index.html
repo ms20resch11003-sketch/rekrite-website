@@ -1437,21 +1437,32 @@
             max-width: 900px;
         }
 
+        /* Mobile adjustments for screens smaller than 768px */
         @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: nowrap;
-                /* Forces one line */
-                overflow-x: auto;
-                /* Allows swiping left and right */
-                -webkit-overflow-scrolling: touch;
-                /* Smooth swiping on iPhones */
-                justify-content: flex-start;
-                padding-bottom: 5px;
+            header {
+                height: auto;
+                /* Removes the strict 80px limit */
+                min-height: 80px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                flex-direction: column;
+                /* Stacks logo above the navigation links */
+                justify-content: center;
             }
 
-            /* Hides the ugly scrollbar for a clean look */
-            nav ul::-webkit-scrollbar {
-                display: none;
+            nav {
+                width: 100%;
+                margin-top: 10px;
+                /* Space between logo and links */
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                /* Allows links to cleanly break into multiple lines */
+                justify-content: center;
+                row-gap: 12px;
+                /* Adds vertical space between the wrapped lines of text */
+                column-gap: 15px;
             }
         }
     </style>
