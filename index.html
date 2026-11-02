@@ -1436,6 +1436,24 @@
             margin-bottom: 1.5rem;
             max-width: 900px;
         }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: nowrap;
+                /* Forces one line */
+                overflow-x: auto;
+                /* Allows swiping left and right */
+                -webkit-overflow-scrolling: touch;
+                /* Smooth swiping on iPhones */
+                justify-content: flex-start;
+                padding-bottom: 5px;
+            }
+
+            /* Hides the ugly scrollbar for a clean look */
+            nav ul::-webkit-scrollbar {
+                display: none;
+            }
+        }
     </style>
 </head>
 
