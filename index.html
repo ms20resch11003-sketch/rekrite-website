@@ -77,26 +77,52 @@
             color: inherit;
         }
 
-        /* --- Navigation --- */
         header {
+            /* Or .nav, .navbar, depending on your HTML class */
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            height: 80px;
+            /* The Fix: Tinted frosted glass effect */
+            background: rgba(243, 235, 240, 0.90);
+            /* Soft dusty rose tint matching the hero */
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
+            /* Modern blur effect */
+            -webkit-backdrop-filter: blur(10px);
+            /* Safari support */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            /* Subtle shadow to separate it from dark backgrounds */
+            /* Lets the hero image show through */
             z-index: 1000;
-            padding: 1rem 5%;
+            /* Ensures the menu stays on top of everything */
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            transition: background 0.3s ease;
+            /* Optional: smooth transition if you add a scroll effect later */
         }
 
+        /* Update the .logo container */
         .logo {
-            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* Space between logo image and text, if you use both */
+            text-decoration: none;
+            font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 1px;
+            color: var(--secondary);
+        }
+
+        /* Add this new rule to control the image size */
+        .logo img {
+            max-height: 50px;
+            /* Keeps the logo cleanly inside your 80px header */
+            width: auto;
+            /* Maintains the image's original aspect ratio */
+            display: block;
         }
 
         nav ul {
@@ -129,52 +155,94 @@
             color: var(--primary);
         }
 
-        /* --- Hero Section --- */
-        #hero {
-            min-height: 90vh;
+        .hero {
+            margin-top: 0;
+            min-height: 100vh;
+            /* Fixed broken calc syntax */
+            width: 100%;
+            max-width: 100%;
+            /* Overrides global section max-width */
+            margin-left: 0;
+            margin-right: 0;
+
+            /* Set the clean lotus image as background */
+            background-image: url('images/hero.png');
+            background-size: cover;
+            background-position: center right;
+            /* Keeps lotus graphic anchored to the right */
+            background-repeat: no-repeat;
+
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            /* Soft feminine gradient */
-            background: linear-gradient(135deg, #FFF0F2 0%, #F4E4E6 100%);
-            padding-top: 8rem;
+            padding: 4rem 8%;
+            /* Provides breathing room inside without shrinking the image container */
+            box-sizing: border-box;
         }
 
-        #hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            max-width: 900px;
+        .hero-content {
+            max-width: 600px;
+            color: var(--secondary);
+            /* Dark charcoal text for high contrast against soft dusty rose background */
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
             color: var(--secondary);
         }
 
-        #hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
+        .hero-content p {
+            font-size: 1.15rem;
             color: var(--text-main);
             margin-bottom: 2rem;
         }
 
-        .btn {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.9rem 2.2rem;
-            border-radius: 40px;
-            /* Softer, rounder buttons */
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            letter-spacing: 0.5px;
+        .hero-brand {
+            display: block;
+            font-size: 3rem;
+            /* Makes it larger than standard text */
+            font-weight: 700;
+            color: var(--primary);
+            /* Matches the 'Explore Our Technology' color */
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            /* Adds a clean, premium feel */
         }
 
-        .btn:hover {
-            background: var(--primary-light);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(193, 119, 130, 0.3);
-            /* Rose-tinted glow */
+        /* Style the functional HTML button */
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .hero-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Layout for Mobile */
+        @media (max-width: 968px) {
+            #hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 6rem;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
         }
 
         /* --- About Section (The Story) --- */
@@ -182,7 +250,7 @@
             background: var(--white);
             border-radius: 20px;
             padding: 4rem;
-            margin-top: -3rem;
+            margin-top: 0;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
         }
 
@@ -1081,45 +1149,6 @@
             right: 10px;
         }
 
-        /* 1. Give the slideshow container a minimum height so it pushes the button down */
-        .hero-slideshow {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            min-height: 150px;
-            margin: 0 auto 2rem auto;
-        }
-
-        /* 2. Ensure slides sit on top of each other properly */
-        .hero-slideshow .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .hero-slideshow .slide.active {
-            opacity: 1;
-            z-index: 2;
-            pointer-events: auto;
-        }
-
-        /* --- Hero Text Slideshow Styles --- */
-        .hero-intro {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            max-width: 900px;
-        }
-
 
 
         @media (max-width: 768px) {
@@ -1321,52 +1350,125 @@
         .overview-card:hover .overview-btn {
             background: var(--primary);
         }
+
+        /* --- Creation Section --- */
+        #creation-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* Soft feminine gradient */
+            background: linear-gradient(135deg, #FFF0F2 0%, #F4E4E6 100%);
+            /* Adjusted padding: removed 90vh height and 8rem top padding so it behaves like a normal section */
+            padding: 5rem 2rem;
+        }
+
+        /* Note: You may want to change your HTML to use an <h2> here instead of <h1> for SEO purposes, but the styling remains the same */
+        #creation-section h1,
+        #creation-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            color: var(--secondary);
+        }
+
+        #creation-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            color: var(--text-main);
+            margin-bottom: 2rem;
+        }
+
+        /* Button styles remain exactly the same since .btn is a reusable class */
+        .btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.9rem 2.2rem;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(193, 119, 130, 0.3);
+        }
+
+        /* --- Creation Slideshow Styles --- */
+        .creation-slideshow {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            min-height: 150px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .creation-slideshow .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .creation-slideshow .slide.active {
+            opacity: 1;
+            z-index: 2;
+            pointer-events: auto;
+        }
+
+        .creation-intro {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Header / Navigation -->
     <header>
-        <div class="logo">Rekrite</div>
+        <a href="#hero" class="logo">
+            <!-- Replace 'images/logo.png' with your actual logo file path -->
+            <!-- <img src="images/logo.png" alt="Rekrite Logo"> -->
+
+            <!-- Optional: If you want the text "Rekrite" next to the image, uncomment the line below -->
+            <!-- <span>Rekrite</span> -->
+        </a>
         <nav>
             <ul>
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="#product-overview">Technology</a></li>
                 <li><a href="#co-creation">Co-creating</a></li>
                 <li><a href="#microencapsulation">Microcapsules</a></li>
                 <li><a href="#investment">Invest</a></li>
+                <li><a href="#footer">Contact Us</a></li>
             </ul>
         </nav>
     </header>
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <h1>Co-Creating Nature-Inspired Solutions for a Better Tomorrow</h1>
-
-        <p class="hero-intro">At Rekrite, we believe the next breakthrough in materials innovation begins with
-            collaboration.</p>
-
-        <!-- Text Slideshow Container -->
-        <div class="hero-slideshow">
-            <p class="slide active">With over 15 years of expertise in biopolymer-based materials, including bacterial
-                cellulose, we develop versatile material formats such as microcapsules, sheets, beads, foams, and
-                gels—designed to address real-world challenges through smarter, more sustainable solutions.</p>
-
-            <p class="slide">We partner with innovators, industries, and researchers to co-create nature-inspired
-                solutions across healthcare, personal care, home care, agriculture, electronics, and beyond.</p>
-
-            <p class="slide">Whether the challenge is to improve the efficiency of active-ingredient delivery, develop
-                high-performance natural carriers, reduce dependence on conventional plastics, or enable entirely new
-                applications, we bring together materials expertise, purposeful design, and collaborative thinking to
-                turn possibilities into solutions.</p>
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <span class="hero-brand">Rekrite</span>
+            <h1>REVOLUTIONIZING SUSTAINABLE MATERIALS WITH BACTERIAL CELLULOSE</h1>
+            <p>Pioneering Eco-friendly Bio-Materials</p>
+            <a href="#product-overview" class="hero-btn">EXPLORE OUR TECHNOLOGY &rarr;</a>
         </div>
-
-        <p class="hero-cta-text">Have a challenge worth solving?</p>
-        <a href="#co-creation" class="btn">Let's co-create what comes next</a>
     </section>
-
     <!-- About Section -->
     <section id="about">
         <h2 class="section-title">The Rekrite Journey</h2>
@@ -1442,6 +1544,32 @@
                 <span class="overview-btn">Learn More <span>&#10095;</span></span>
             </a>
         </div>
+    </section>
+
+    <section id="creation-section">
+        <!-- Using <h2> since this is now a standard section below the main hero -->
+        <h2>Co-Creating Nature-Inspired Solutions for a Better Tomorrow</h2>
+
+        <p class="creation-intro">At Rekrite, we believe the next breakthrough in materials innovation begins with
+            collaboration.</p>
+
+        <!-- Text Slideshow Container -->
+        <div class="creation-slideshow">
+            <p class="slide active">With over 15 years of expertise in biopolymer-based materials, including bacterial
+                cellulose, we develop versatile material formats such as microcapsules, sheets, beads, foams, and
+                gels—designed to address real-world challenges through smarter, more sustainable solutions.</p>
+
+            <p class="slide">We partner with innovators, industries, and researchers to co-create nature-inspired
+                solutions across healthcare, personal care, home care, agriculture, electronics, and beyond.</p>
+
+            <p class="slide">Whether the challenge is to improve the efficiency of active-ingredient delivery, develop
+                high-performance natural carriers, reduce dependence on conventional plastics, or enable entirely new
+                applications, we bring together materials expertise, purposeful design, and collaborative thinking to
+                turn possibilities into solutions.</p>
+        </div>
+
+        <p class="creation-cta-text">Have a challenge worth solving?</p>
+        <a href="#co-creation" class="btn">Let's co-create what comes next</a>
     </section>
     <!-- === MATERIAL PLATFORMS (NEW FULL-WIDTH LAYOUT) === -->
 
@@ -2093,20 +2221,26 @@
                     addMessage("Please email partner@rekrite.com to request our pitch deck.", 'ai-message');
                 }
             }
-            // Hero Text Slideshow Logic
-            const heroSlides = document.querySelectorAll('.hero-slideshow .slide');
-            let currentSlide = 0;
+            // Creation Text Slideshow Logic
+            const creationSlides = document.querySelectorAll('.creation-slideshow .slide');
+            let currentCreationSlide = 0;
 
-            function nextHeroSlide() {
+            function nextCreationSlide() {
+                // Check if slides exist to avoid errors
+                if (creationSlides.length === 0) return;
+
                 // Fade out current slide
-                heroSlides[currentSlide].classList.remove('active');
+                creationSlides[currentCreationSlide].classList.remove('active');
 
                 // Move to the next slide (loops back to 0 when it hits the end)
-                currentSlide = (currentSlide + 1) % heroSlides.length;
+                currentCreationSlide = (currentCreationSlide + 1) % creationSlides.length;
 
                 // Fade in new slide
-                heroSlides[currentSlide].classList.add('active');
+                creationSlides[currentCreationSlide].classList.add('active');
             }
+
+            // Automatically change slide every 5 seconds (adjust interval timing as needed)
+            setInterval(nextCreationSlide, 5000);
             // --- Product Read More Modal Logic ---
             function openModal(detailsId) {
                 // Get the hidden content for the specific product clicked
