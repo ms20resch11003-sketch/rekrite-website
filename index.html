@@ -8,21 +8,18 @@
     <!-- Google Fonts for a clean, professional typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        html,
-        body {
-            overflow-x: hidden;
-            /* Strictly blocks horizontal stretching */
-            width: 100%;
-        }
+        html, body {
+    overflow-x: hidden; /* Strictly blocks horizontal stretching */
+    width: 100%;
+}
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-light);
-            line-height: 1.7;
-            scroll-behavior: smooth;
-        }
-
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
         /* --- CSS Variables for Elegant Feminine Biotech Theme --- */
         :root {
             --primary: #C17782;
@@ -895,11 +892,11 @@
             }
         }
 
+        
 
+     
 
-
-
-
+        
 
         /* --- Read More Button & Modal Styles --- */
         .read-more-btn {
@@ -1080,38 +1077,35 @@
         .next-arrow {
             right: 10px;
         }
-
         /* 1. Give the slideshow container a minimum height so it pushes the button down */
-        .hero-slideshow {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            min-height: 150px;
-            margin: 0 auto 2rem auto;
-        }
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: 150px; 
+    margin: 0 auto 2rem auto;
+}
+/* 2. Ensure slides sit on top of each other properly */
+.hero-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+    pointer-events: none; 
+}
 
-        /* 2. Ensure slides sit on top of each other properly */
-        .hero-slideshow .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .hero-slideshow .slide.active {
-            opacity: 1;
-            z-index: 2;
-            pointer-events: auto;
-        }
-
-        /* --- Hero Text Slideshow Styles --- */
+.hero-slideshow .slide.active {
+    opacity: 1;
+    z-index: 2;
+    pointer-events: auto;
+}
+/* --- Hero Text Slideshow Styles --- */
         .hero-intro {
             font-size: 1.3rem;
             font-weight: 600;
@@ -1120,60 +1114,57 @@
             max-width: 900px;
         }
 
+        
 
+@media (max-width: 768px) {
+    /* Hero Slideshow Height Fix */
+    .hero-slideshow {
+        min-height: 350px; 
+    }
 
-        @media (max-width: 768px) {
+    /* Existing Header Fixes */
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
 
-            /* Hero Slideshow Height Fix */
-            .hero-slideshow {
-                min-height: 350px;
-            }
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
 
-            /* Existing Header Fixes */
-            header {
-                flex-direction: column;
-                padding: 1rem;
-                gap: 1rem;
-            }
+    nav ul li a {
+        font-size: 0.9rem;
+    }
 
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-                padding: 0;
-            }
+    /* Hero Overlap & Text Size Fixes */
+    #hero {
+        padding-top: 12rem; 
+    }
 
-            nav ul li a {
-                font-size: 0.9rem;
-            }
+    #hero h1 {
+        font-size: 2.2rem; 
+    }
 
-            /* Hero Overlap & Text Size Fixes */
-            #hero {
-                padding-top: 12rem;
-            }
-
-            #hero h1 {
-                font-size: 2.2rem;
-            }
-
-            /* Responsive Chat Widget (Syntax fixed) */
-            #re-ai-widget {
-                width: calc(100% - 40px);
-                right: 20px;
-                bottom: 20px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* Fixes the overflowing Microencapsulation header */
-            .highlight-header h2 {
-                font-size: 1.8rem;
-                overflow-wrap: break-word;
-                word-wrap: break-word;
-            }
-        }
+    /* Responsive Chat Widget (Syntax fixed) */
+    #re-ai-widget {
+        width: calc(100% - 40px);
+        right: 20px;
+        bottom: 20px;
+    }
+    .products-grid {
+    grid-template-columns: 1fr; 
+}
+/* Fixes the overflowing Microencapsulation header */
+    .highlight-header h2 {
+        font-size: 1.8rem; 
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+}
     </style>
 </head>
 
@@ -1245,26 +1236,28 @@
         <div class="products-grid">
 
             <!-- Product 1 -->
+            <!-- Product 1 -->
             <div class="product-card">
                 <!-- NEW Media Carousel (Video + Images) -->
                 <div class="product-media-carousel">
-
+                    <!-- Item 1: Auto-playing Video -->
+                    <div class="carousel-item active">
+                        <!-- 'muted' and 'playsinline' are required for browsers to allow autoplay -->
+                        <video src="images/bc1.mp4" autoplay muted playsinline></video>
+                    </div>
                     <!-- Item 2: Image -->
                     <div class="carousel-item">
-                        <img src="images/IMG_2394.JPG" alt="Porous Beads View 1">
+                        <img src="images/bc2.jpeg" alt="Porous Beads View 1">
                     </div>
                     <!-- Item 3: Image -->
                     <div class="carousel-item">
-                        <img src="images/IMG_2367.JPG" alt="Porous Beads View 2">
+                        <img src="images/bc3.JPG" alt="Porous Beads View 2">
                     </div>
                     <div class="carousel-item">
-                        <img src="images/IMG_2513.JPG" alt="Porous Beads View 2">
+                        <img src="images/bc4.JPG" alt="Porous Beads View 2">
                     </div>
                     <div class="carousel-item">
-                        <img src="images/IMG_2378.JPG" alt="Porous Beads View 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/IMG_2514.JPG" alt="Porous Beads View 2">
+                        <img src="images/bc5.JPG" alt="Porous Beads View 2">
                     </div>
 
                     <!-- Navigation Arrows -->
@@ -1336,37 +1329,10 @@
                 </div>
             </div>
 
-
+            <!-- Product 2 -->
             <!-- Product 2 -->
             <div class="product-card">
-                <!-- NEW Media Carousel (Video + Images) -->
-                <div class="product-media-carousel">
-
-                    <!-- Item 2: Image -->
-                    <div class="carousel-item">
-                        <img src="images/IMG_2482.JPG" alt="Porous Beads View 1">
-                    </div>
-                    <!-- Item 3: Image -->
-                    <div class="carousel-item">
-                        <img src="images/IMG_2483.JPG" alt="Porous Beads View 2">
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="images/IMG_2483.JPG" alt="Porous Beads View 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/IMG_2492.JPG" alt="Porous Beads View 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/IMG_2493.JPG" alt="Porous Beads View 2">
-                    </div>
-
-                    <!-- Navigation Arrows -->
-                    <button class="carousel-arrow prev-arrow" onclick="moveCarousel(this, -1)">&#10094;</button>
-                    <button class="carousel-arrow next-arrow" onclick="moveCarousel(this, 1)">&#10095;</button>
-                </div>
-                <!-- END Media Carousel -->
-
+                <img src="images/drybc.jpg" alt="Dried Sheets and Composites" class="product-image">
                 <div class="product-content">
                     <h3>Dried Sheets & Composites</h3>
                     <h4>Engineered Porosity. Customizable Structure.</h4>
@@ -1488,8 +1454,22 @@
                 <!-- NEW Media Carousel (Video + Images) -->
                 <div class="product-media-carousel">
                     <!-- Item 1: Auto-playing Video -->
-
-
+                    <div class="carousel-item active">
+                        <!-- 'muted' and 'playsinline' are required for browsers to allow autoplay -->
+                        <video src="images/beads1.mp4" autoplay muted playsinline></video>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- 'muted' and 'playsinline' are required for browsers to allow autoplay -->
+                        <video src="images/beads2.mp4" autoplay muted playsinline></video>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- 'muted' and 'playsinline' are required for browsers to allow autoplay -->
+                        <video src="images/beads3.mp4" autoplay muted playsinline></video>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- 'muted' and 'playsinline' are required for browsers to allow autoplay -->
+                        <video src="images/beadslast.mp4" autoplay muted playsinline></video>
+                    </div>
                     <!-- Item 2: Image -->
                     <div class="carousel-item">
                         <img src="images/Beads 2.png" alt="Porous Beads View 2">
@@ -1499,9 +1479,11 @@
                     </div>
                     <!-- Item 3: Image -->
                     <div class="carousel-item">
-                        <img src="images/IMG_2414.JPG" alt="Porous Beads View 2">
+                        <img src="images/beadssem.jpg" alt="Porous Beads View 2">
                     </div>
-
+                    <div class="carousel-item">
+                        <img src="images/beadssem2.jpg" alt="Porous Beads View 2">
+                    </div>
 
                     <!-- Navigation Arrows -->
                     <button class="carousel-arrow prev-arrow" onclick="moveCarousel(this, -1)">&#10094;</button>
@@ -1591,27 +1573,29 @@
                                 <img src="images/Slurry.jpeg" alt="Nanocellulose Slurries View 1">
                             </div>
 
-
-
+                            <!-- Item 2: Image -->
+                            <div class="carousel-item">
+                                <img src="images/slurry1.jpg" alt="Nanocellulose Slurries View 2">
+                            </div>
 
                             <!-- Item 3: Image -->
                             <div class="carousel-item">
-                                <img src="images/IMG_2471.JPG" alt="Nanocellulose Slurries View 3">
+                                <img src="images/slurry2.jpg" alt="Nanocellulose Slurries View 3">
                             </div>
 
                             <!-- Item 4: Image -->
                             <div class="carousel-item">
-                                <img src="images/IMG_2480.JPG" alt="Nanocellulose Slurries View 4">
+                                <img src="images/cnf.jpg" alt="Nanocellulose Slurries View 4">
                             </div>
 
                             <!-- Item 5: Image -->
                             <div class="carousel-item">
-                                <img src="images/IMG_2460.JPG" alt="Nanocellulose Slurries View 5">
+                                <img src="images/cnf2.jpg" alt="Nanocellulose Slurries View 5">
                             </div>
 
                             <!-- Item 6: Image -->
                             <div class="carousel-item">
-                                <img src="images/IMG_2450.JPG" alt="Nanocellulose Slurries View 6">
+                                <img src="images/cnf3.jpg" alt="Nanocellulose Slurries View 6">
                             </div>
 
                             <!-- Navigation Arrows -->
