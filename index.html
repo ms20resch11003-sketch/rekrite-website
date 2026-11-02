@@ -89,9 +89,14 @@
             -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
             z-index: 1000;
-            display: flex;
+
+            /* The Fix: Lock elements side-by-side */
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
             align-items: center;
             justify-content: space-between;
+
             padding: 0 5%;
             transition: background 0.3s ease;
         }
@@ -160,6 +165,16 @@
             .mobile-menu-toggle {
                 display: flex;
                 /* Show the hamburger button */
+            }
+
+            /* Shrink logo to fit next to the hamburger button */
+            .logo {
+                font-size: 1.8rem;
+                gap: 8px;
+            }
+
+            .logo img {
+                max-height: 40px;
             }
 
             /* Hide and position the nav menu for dropdown */
