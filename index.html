@@ -1485,18 +1485,18 @@
         }
 
         /* --- Creation Slideshow Styles --- */
+        /* --- Creation Slideshow Styles (Grid Fix) --- */
         .creation-slideshow {
-            position: relative;
+            display: grid;
+            grid-template-areas: "slide-stack";
             width: 100%;
             max-width: 900px;
-            min-height: 150px;
             margin: 0 auto 2rem auto;
         }
 
         .creation-slideshow .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
+            grid-area: slide-stack;
+            /* Stacks all slides in the same grid cell */
             width: 100%;
             text-align: center;
             display: flex;
@@ -1505,6 +1505,7 @@
             transition: opacity 1s ease-in-out;
             z-index: 1;
             pointer-events: none;
+            margin: 0;
         }
 
         .creation-slideshow .slide.active {
@@ -1574,7 +1575,7 @@
                 <li><a href="#hero" onclick="closeMobileMenu()">Home</a></li>
                 <li><a href="#about" onclick="closeMobileMenu()">About Us</a></li>
                 <li><a href="#product-overview" onclick="closeMobileMenu()">Technology</a></li>
-                <li><a href="#co-creation" onclick="closeMobileMenu()">Co-creating</a></li>
+                <li><a href="#creation-section" onclick="closeMobileMenu()">Co-creating</a></li>
                 <li><a href="#microencapsulation" onclick="closeMobileMenu()">Microcapsules</a></li>
                 <li><a href="#investment" onclick="closeMobileMenu()">Invest</a></li>
                 <li><a href="#footer" onclick="closeMobileMenu()">Contact Us</a></li>
